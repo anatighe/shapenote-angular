@@ -6,11 +6,11 @@ describe('myApp.view1 module', function() {
 
   describe('view1 controller', function(){
 
-    it('should ....', inject(function($controller) {
-      //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
-    }));
+    it('should create a "songs" model with 3 songs'), inject(function($controller) {
+    	var scope = {},
+      view1Ctrl = $controller('View1Ctrl', {$scope:scope});
+      expect (scope.songs.length).toBe(3);
+    });
 
   });
 });

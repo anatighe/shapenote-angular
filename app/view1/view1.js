@@ -9,6 +9,13 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', function($scope, $http) {
+  $http.get('songdata.json').success(function(data) {
+    $scope.songs = data;
+    $scope.songs.forEach(function (song) {
+      song._id = parseFloat(song._id);
+    });
+  });
+});
 
-}]);
+
