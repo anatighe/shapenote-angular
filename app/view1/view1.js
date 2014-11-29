@@ -14,6 +14,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.songs = data;
     $scope.songs.forEach(function (song) {
       song._id = parseFloat(song._id);
+      song.meterName = song.MeterName;
     });
   });
 });
