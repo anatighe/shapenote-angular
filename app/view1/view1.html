@@ -10,7 +10,7 @@
 	  Sort by:
 	  <select ng-model="orderProperty">
 	    <option value="Title">Alphabetical</option>
-	    <option value="_id">Number</option>
+	    <option value="id">Number</option>
 	    <option value="meterName">Meter Name</option>
 	  </select>
 
@@ -20,7 +20,9 @@
 
 	    <ul>
 	        <li ng-repeat="song in songs | filter:query | orderBy:orderProperty">
-	          	{{song._id}}  {{song.Title}}
+	          	{{song.id}} {{song.Title}} {{song.meterName}} 
+	            <a href="#" class="testmodal">{{song.Title}}</a>
+	            <p><a href class="btn btn-default btn-lg " ng-click="showAModal()">Show Yes No</a></p>
 	        </li>
 	    </ul>
     </div>
