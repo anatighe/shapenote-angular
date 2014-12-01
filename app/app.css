@@ -33,3 +33,14 @@ ul li {
   content: "";
   padding: 0;
 }
+.contact {
+  float: right;
+  border: 0;
+  position: relative;
+  color: white;
+  padding: 1em .5em .5em .5em;
+}
+
+.icon-cog {
+    color: white;
+}
