@@ -10,7 +10,7 @@ ul li {
   border-bottom: 0.1em solid black;
   margin-bottom: 2em;
   margin-top: 0;
-  padding: .5em;
+  padding: .2em 3% .2em;
   position: relative;
   z-index: 10;
   background-color: #f0604c;

@@ -1,12 +1,13 @@
 
 <div ng-controller="View1Ctrl">
   <div class="row">
-	<p>Search Sacred Harp Songs</p>
+	<h4>Search Sacred Harp Songs</h4>
 
 	<div class="col-md-2">
 	  <!--Sidebar content-->
-
-	  Search: <input ng-model="query">
+	  <p>Search by title: <input type="text" ng-model="search.Title"></p>
+	  <p>Search by song text: <input ng-model="search.songText"></p>
+	  <p>Search by song number: <input ng-model="search.id"></p>
 	  Sort by:
 	  <select ng-model="orderProperty">
 	    <option value="Title">Alphabetical</option>
@@ -16,23 +17,22 @@
 
 	</div>
 	    <div class="col-md-10">
-	      <!--Body content-->
 		    <script type="text/ng-template" id="songText.html">
 		      	<div>
 			    	<div class="modal-body">
 				    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">×</button>
-				        <h3 class="modal-title">{{song.Title}}</h3>
-						<blockquote>
+						<p>
+							<h3>{{song.Title}}</h3>
 							<pre>{{song.SongText}}</pre>
-						</blockquote>
+						</p>
 			        </div>
 		        </div>  
 		    </script>
 
 	    <ul>
-	        <li ng-repeat="song in songs | filter:query | orderBy:orderProperty">
-	          	{{song.id}} {{song.meterName}} 
-	            <h4><a ng-click="open(song)">{{song.Title}}</a></h4>
+	        <li ng-repeat="song in songs | filter:search | orderBy:orderProperty">
+	        	<p><h5><a ng-click="open(song)">{{song.Title}}</a></h5><span>{{song.id}}   |   {{song.meterName}}</span></p>
+	          	 
 	        </li>
 	    </ul>
     </div>
