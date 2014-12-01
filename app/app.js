@@ -6,8 +6,6 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.song-detail',
   'myApp.version',
-  'shapenoteServices',
-  'angularModalService',
   'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {

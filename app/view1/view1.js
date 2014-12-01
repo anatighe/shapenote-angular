@@ -9,32 +9,42 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', function($scope, $http, ModalService) {
+.controller('View1Ctrl', function($scope, $http, $modal, $log) {
   $http.get('songdata.json').success(function(data) {
     $scope.songs = data;
     $scope.songs.forEach(function (song) {
       song.id = parseFloat(song._id);
       song.meterName = song.MeterName;
       song.songText = song.SongText
-    });
-    $scope.showAModal = function() {
+      $scope.open = function (song) {
 
-      // Just provide a template url, a controller and call 'showModal'.
-      ModalService.showModal({
-        template: "<p>omg</p>",
-        controller: "modalController"
-      }).then(function(modal) {
-        // The modal object has the element built, if this is a bootstrap modal
-        // you can call 'modal' to show it, if it's a custom modal just show or hide
-        // it as you need to.
-        modal.element.modal();
-        modal.close.then(function(result) {
-          $scope.message = result ? "You said Yes" : "You said No";
+        var modalInstance = $modal.open({
+          song: song,
+          scope: $scope,
+          templateUrl: 'songText.html',
+          controller: 'ModalInstanceCtrl1',
+          backdrop: true,
+          resolve: {
+                song: function(){
+                    return song;
+                }
+              }
         });
-      });
-
-    };
+      };
+    });
   });
+})
+
+angular.module('myApp.view1').controller('ModalInstanceCtrl1', function ($scope, $modalInstance, song) {
+  $scope.song=song;
+  
+  $scope.ok = function () {
+    $modalInstance.close();
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.close();
+  };
 });
 
 
