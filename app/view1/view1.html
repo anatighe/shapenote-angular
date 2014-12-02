@@ -33,10 +33,10 @@
 
 	    <ul>
 	    	<li ng-repeat="song in songs | filter:search | orderBy:orderProperty" ng-style="{ 'background' : song.classColor }">
-	    	<div>
-        		<h5><a ng-click="open(song)">{{song.Title}}</a> {{song.id}}</h5>
-        		<span>{{song.meterName}}</span>
-        	</div>
+		    	<div>
+	        		<h5><a ng-click="open(song)">{{song.Title}}</a> {{song.id}}</h5>
+	        		<span>{{song.meterName}}</span>
+	        	</div>
 	        </li>
 	    </ul>
     </div>
