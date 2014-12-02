@@ -1,10 +1,12 @@
 
 <div ng-controller="View1Ctrl">
   <div class="row">
-	<h4>Search Sacred Harp Songs</h4>
+
 
 	<div class="col-md-2">
 	  <!--Sidebar content-->
+	  <h3>Search Songs</h3>
+	  <h5>Songs are colored by meter name</h5>
 	  <p>Search by title: <input type="text" ng-model="search.Title"></p>
 	  <p>Search by song text: <input ng-model="search.songText"></p>
 	  <p>Search by song meter: <input ng-model="search.meterName"></p>
@@ -16,7 +18,6 @@
 	    <option value="id">Number</option>
 	    <option value="meterName">Meter Name</option>
 	  </select>
-	  <h5>Songs are grouped in colors by meter name</h5>
 	</div>
     <div class="col-md-10">
 	    <script type="text/ng-template" id="songText.html">
