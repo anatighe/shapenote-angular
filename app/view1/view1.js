@@ -27,7 +27,6 @@ angular.module('myApp.view1', ['ngRoute'])
       song.meterName = song.MeterName;
       song.songText = song.SongText;
       song.classColor = meterColors[song.meterName];
-          console.log(song.classColor);
       $scope.bgColor = song.classColor;
       
       $scope.open = function (song) {
