@@ -16,20 +16,20 @@
 	    <option value="id">Number</option>
 	    <option value="meterName">Meter Name</option>
 	  </select>
-
+	  <h5>Songs are grouped in colors by meter name</h5>
 	</div>
-	    <div class="col-md-10">
-		    <script type="text/ng-template" id="songText.html">
-		      	<div>
-			    	<div class="modal-body">
-				    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">×</button>
-						<p>
-							<h3>{{song.Title}}</h3>
-							<pre>{{song.SongText}}</pre>
-						</p>
-			        </div>
-		        </div>  
-		    </script>
+    <div class="col-md-10">
+	    <script type="text/ng-template" id="songText.html">
+	      	<div>
+		    	<div class="modal-body">
+			    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="cancel()">×</button>
+					<p>
+						<h3>{{song.Title}}</h3>
+						<pre>{{song.SongText}}</pre>
+					</p>
+		        </div>
+	        </div>  
+	    </script>
 
 	    <ul>
 	    	<li ng-repeat="song in songs | filter:search | orderBy:orderProperty" ng-style="{ 'background' : song.classColor }">

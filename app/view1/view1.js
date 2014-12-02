@@ -48,7 +48,7 @@ angular.module('myApp.view1', ['ngRoute'])
 })
 
 function assignMeterColors(meterArray) {
-  var colorArray = ["#f9c0b9", "#e1e1e1", "#bfaba9", "#beb594", "#a9bfb7", "#e0d5de", "#ebebeb"]
+  var colorArray = ["#f9c0b9", "#e1e1e1", "#bfaba9", "#beb594", "#a9bfb7", "#e0d5de", "#ebebeb", "#dba886", "#cabd4b", "#dbd386"]
 
   var meterColors = {};
   meterArray.forEach(function(meter) {
