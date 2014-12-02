@@ -23,6 +23,7 @@ angular.module('myApp.view1', ['ngRoute'])
     var meterColors = assignMeterColors(meterArray);
 
     $scope.songs.forEach(function (song) {
+      song.title = song.Title;
       song.id = parseFloat(song._id);
       song.meterName = song.MeterName;
       song.songText = song.SongText;
